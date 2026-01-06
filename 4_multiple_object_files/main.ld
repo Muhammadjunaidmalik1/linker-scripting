@@ -9,15 +9,20 @@ MEMORY {
 
 SECTIONS {
     .text : {
-        main.o (.text)
+        *(.text)
     } > junaid
 
     .data : {
-        main.o (.data)
+        *(.data)
     } > junaid
 
     .bss : {
-        main.o (.bss)
+        *(.bss)
     } > junaid
+
+
+    /DISCARD/ : {
+        *(*) /* discard everything */
+    }
 
 }
